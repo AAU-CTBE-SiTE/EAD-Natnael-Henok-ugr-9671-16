@@ -1,1 +1,1 @@
-# EAD-Natnael-Henok-ugr-9671-16
+Lab 1: Java Maven Starter Project

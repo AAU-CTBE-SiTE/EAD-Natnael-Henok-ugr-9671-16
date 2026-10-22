@@ -1,6 +1,6 @@
 # JPA Lab
 
-Jakarta Persistence (JPA) with Hibernate 6, MySQL and Lombok. CRUD with the EntityManager API plus JPQL queries on a `Student` entity.
+Jakarta Persistence (JPA) with Hibernate 6, MySQL and Lombok. CRUD (create, read, update, delete) with the EntityManager API on a `Student` entity.
 
 ## Setup
 1. Create the database: `create database jpadb1;`

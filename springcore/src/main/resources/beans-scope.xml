@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- singleton (default): ONE shared instance -->
+    <bean id="singletonStudent" class="com.craft.Student" scope="singleton"/>
+
+    <!-- prototype: a NEW instance on every getBean() -->
+    <bean id="prototypeStudent" class="com.craft.Student" scope="prototype"/>
+
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.craft.Address">
+        <property name="city" value="Addis"/>
+        <property name="country" value="Ethiopia"/>
+    </bean>
+
+    <!-- by parameter name -->
+    <bean id="studentByName" class="com.craft.Student">
+        <constructor-arg name="id" value="101"/>
+        <constructor-arg name="name" value="John Doe"/>
+        <constructor-arg name="age" value="20"/>
+        <constructor-arg name="address" ref="address"/>
+    </bean>
+
+    <!-- by position (0-based index) -->
+    <bean id="studentByIndex" class="com.craft.Student">
+        <constructor-arg index="0" value="102"/>
+        <constructor-arg index="1" value="Jane Doe"/>
+        <constructor-arg index="2" value="22"/>
+        <constructor-arg index="3" ref="address"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.craft.Address">
+        <property name="city" value="Addis"/>
+        <property name="country" value="Ethiopia"/>
+    </bean>
+
+    <bean id="math" class="com.craft.Subject">
+        <property name="subjectName" value="Maths 101"/>
+    </bean>
+
+    <bean id="java" class="com.craft.Subject">
+        <property name="subjectName" value="Java EE"/>
+    </bean>
+
+    <bean id="student" class="com.craft.Student">
+        <property name="id" value="101"/>
+        <property name="name" value="John Doe"/>
+        <property name="age" value="20"/>
+        <property name="address" ref="address"/>
+        <property name="subjects">
+            <list>
+                <ref bean="math"/>
+                <ref bean="java"/>
+            </list>
+        </property>
+    </bean>
+
+    <!-- every collection type in one bean -->
+    <bean id="collections" class="com.craft.CollectionBean">
+        <property name="list">
+            <list>
+                <ref bean="math"/>
+                <ref bean="java"/>
+                <ref bean="math"/> <!-- duplicates are fine in a list -->
+            </list>
+        </property>
+        <property name="tags">
+            <set>
+                <value>spring</value>
+                <value>ioc</value>
+                <value>spring</value> <!-- ignored: a set has no duplicates -->
+            </set>
+        </property>
+        <property name="subjectArray">
+            <array>
+                <ref bean="math"/>
+                <ref bean="java"/>
+            </array>
+        </property>
+        <property name="capitals">
+            <map>
+                <entry key="Ethiopia" value="Addis Ababa"/>
+                <entry key="Kenya" value="Nairobi"/>
+            </map>
+        </property>
+        <property name="settings">
+            <props>
+                <prop key="mode">training</prop>
+                <prop key="level">beginner</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
